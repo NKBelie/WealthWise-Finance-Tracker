@@ -1,0 +1,512 @@
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Mobile First Approach - Base styles are mobile
+   ========================================================================== */
+
+/* Mobile Specific Styles (up to 639px) */
+@media (max-width: 639px) {
+    /* Navigation */
+    .nav-container {
+        padding: 0 var(--spacing-4);
+    }
+    
+    .nav-logo {
+        font-size: var(--font-size-lg);
+    }
+    
+    .nav-logo .logo-text {
+        display: none;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-12) 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-6);
+    }
+    
+    .hero-actions {
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+    
+    /* Features */
+    .features {
+        padding: var(--spacing-12) 0;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .section-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Cards */
+    .card-padding {
+        padding: var(--spacing-4);
+    }
+    
+    /* Forms */
+    .form-group {
+        margin-bottom: var(--spacing-3);
+    }
+    
+    /* Tables */
+    .data-table {
+        font-size: var(--font-size-xs);
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: var(--spacing-2);
+    }
+    
+    /* Hide less important table columns on mobile */
+    .table-hide-mobile {
+        display: none;
+    }
+    
+    /* Stack table actions vertically */
+    .table-actions {
+        flex-direction: column;
+        gap: var(--spacing-1);
+    }
+    
+    /* Dashboard */
+    .dashboard {
+        padding: var(--spacing-4) 0;
+    }
+    
+    .dashboard-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Page headers */
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-4);
+    }
+    
+    .page-actions {
+        justify-content: stretch;
+    }
+    
+    .page-actions .btn {
+        flex: 1;
+    }
+    
+    /* Modal adjustments */
+    .modal-content {
+        width: 95%;
+        margin: var(--spacing-4);
+    }
+    
+    .modal-padding {
+        padding: var(--spacing-4);
+    }
+    
+    /* Notification adjustments */
+    .notification-container {
+        top: var(--spacing-2);
+        right: var(--spacing-2);
+        left: var(--spacing-2);
+        max-width: none;
+    }
+    
+    .notification {
+        margin-bottom: var(--spacing-2);
+    }
+}
+
+/* ==========================================================================
+   Small Tablets (640px - 767px)
+   ========================================================================== */
+
+@media (min-width: 640px) and (max-width: 767px) {
+    /* Show logo text */
+    .nav-logo .logo-text {
+        display: inline;
+    }
+    
+    /* Hero improvements */
+    .hero-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .hero-actions .btn {
+        width: auto;
+        min-width: 140px;
+    }
+    
+    /* Two-column feature grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Two-column stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Page actions horizontal */
+    .page-header {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .page-actions .btn {
+        flex: none;
+    }
+}
+
+/* ==========================================================================
+   Tablets (768px - 1023px)
+   ========================================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Navigation improvements */
+    .nav-container {
+        padding: 0 var(--spacing-6);
+    }
+    
+    /* Show some mobile-hidden columns */
+    .table-show-tablet {
+        display: table-cell;
+    }
+    
+    /* Three-column layouts where appropriate */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Better dashboard layout */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Form improvements */
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-4);
+    }
+    
+    .form-row .form-group {
+        margin-bottom: var(--spacing-4);
+    }
+    
+    /* Content grid shows both columns */
+    .content-grid {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+/* ==========================================================================
+   Desktop (1024px and up)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+    /* Full navigation visible */
+    .nav-menu {
+        display: flex;
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+    
+    /* Hero side-by-side layout */
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    
+    .hero-text {
+        text-align: left;
+    }
+    
+    .hero-actions {
+        justify-content: flex-start;
+    }
+    
+    /* Four-column features */
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Four-column stats */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Show all table columns */
+    .table-hide-mobile,
+    .table-show-tablet,
+    .table-show-desktop {
+        display: table-cell;
+    }
+    
+    /* Three-column form layouts */
+    .form-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Better content distribution */
+    .content-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    /* Dashboard enhancements */
+    .dashboard {
+        padding: var(--spacing-8) 0;
+    }
+    
+    /* Chart containers side by side */
+    .charts-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+    
+    /* Reports improvements */
+    .reports-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Large Desktop (1280px and up)
+   ========================================================================== */
+
+@media (min-width: 1280px) {
+    /* Larger containers */
+    .container {
+        max-width: var(--container-xl);
+    }
+    
+    /* Enhanced hero */
+    .hero-title {
+        font-size: var(--font-size-6xl);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Six-column stats for very wide screens */
+    .stats-grid-xl {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    /* Three-column content where appropriate */
+    .content-grid-xl {
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    
+    /* Better chart layouts */
+    .charts-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    /* Enhanced reports */
+    .reports-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Extra Large Screens (1536px and up)
+   ========================================================================== */
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: var(--container-2xl);
+    }
+    
+    /* Even larger hero text */
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    /* More spacious layouts */
+    .hero {
+        padding: var(--spacing-20) 0;
+    }
+    
+    .features {
+        padding: var(--spacing-24) 0;
+    }
+    
+    /* Four-column content grids */
+    .reports-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    /* Hide interactive elements */
+    .nav-menu,
+    .nav-toggle,
+    .btn,
+    .notification-container,
+    .modal,
+    .loading-spinner {
+        display: none !important;
+    }
+    
+    /* Adjust colors for print */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    /* Page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+    
+    .no-page-break {
+        page-break-inside: avoid;
+    }
+    
+    /* Ensure content fits */
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Print-friendly tables */
+    .data-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .data-table th,
+    .data-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    .data-table th {
+        background-color: #f5f5f5 !important;
+    }
+}
+
+/* ==========================================================================
+   High DPI / Retina Displays
+   ========================================================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Sharper borders */
+    .card,
+    .btn,
+    .form-input,
+    .modal-content {
+        border-width: 0.5px;
+    }
+    
+    /* Optimize images for retina */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* Remove hover animations */
+    .card:hover,
+    .btn:hover,
+    .stat-card:hover {
+        transform: none !important;
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Responsive Adjustments
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    [data-theme="auto"] {
+        /* Auto theme follows system preference */
+        --bg-primary: #111827;
+        --bg-secondary: #1f2937;
+        --bg-tertiary: #374151;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-tertiary: #9ca3af;
+        --border-primary: #374151;
+        --border-secondary: #4b5563;
+        --card-background: #1f2937;
+        --modal-backdrop: rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* ==========================================================================
+   Landscape Mobile Adjustments
+   ========================================================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Reduce padding for landscape mobile */
+    .hero {
+        padding: var(--spacing-6) 0;
+    }
+    
+    .features {
+        padding: var(--spacing-8) 0;
+    }
+    
+    /* Smaller modal */
+    .modal-content {
+        max-height: 80vh;
+    }
+    
+    /* Compact navigation */
+    .header {
+        height: calc(var(--header-height-mobile) * 0.8);
+    }
+    
+    .navbar {
+        height: calc(var(--header-height-mobile) * 0.8);
+    }
+}

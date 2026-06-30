@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WealthWise - Smart Personal Finance Tracker. Manage your income, expenses, and budgets with ease.">
+    <meta name="keywords" content="finance, budget, expense tracker, personal finance, money management">
+    <meta name="author" content="WealthWise Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="WealthWise - Smart Personal Finance Tracker">
+    <meta property="og:description" content="Take control of your finances with our comprehensive expense tracking and budget management platform.">
+    <meta property="og:type" content="website">
+    
+    <title>WealthWise - Smart Personal Finance Tracker</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/variables.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/layout.css">
+    <link rel="stylesheet" href="src/css/pages.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/assets/favicon.ico">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading WealthWise...</p>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="logo-text">WealthWise</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-section="home">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#income" class="nav-link" data-section="income">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Income</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#expenses" class="nav-link" data-section="expenses">
+                            <i class="fas fa-minus-circle"></i>
+                            <span>Expenses</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#budgets" class="nav-link" data-section="budgets">
+                            <i class="fas fa-calculator"></i>
+                            <span>Budgets</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reports" class="nav-link" data-section="reports">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- User Menu -->
+                <div class="user-menu" id="userMenu">
+                    <!-- Guest Menu -->
+                    <div class="guest-menu" id="guestMenu">
+                        <button class="btn btn-outline" id="loginBtn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </button>
+                        <button class="btn btn-primary" id="registerBtn">
+                            <i class="fas fa-user-plus"></i>
+                            Register
+                        </button>
+                    </div>
+
+                    <!-- Logged In Menu -->
+                    <div class="user-authenticated" id="authenticatedMenu" style="display: none;">
+                        <div class="user-info">
+                            <img src="src/assets/default-avatar.png" alt="User Avatar" class="user-avatar" id="userAvatar">
+                            <span class="user-name" id="userName">User Name</span>
+                        </div>
+                        <div class="user-dropdown">
+                            <button class="dropdown-btn" id="userDropdownBtn">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" id="userDropdownMenu">
+                                <a href="#profile" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    Profile
+                                </a>
+                                <a href="#settings" class="dropdown-item">
+                                    <i class="fas fa-cog"></i>
+                                    Settings
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#logout" class="dropdown-item" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- Home Section -->
+        <section class="section active" id="homeSection">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Take Control of Your 
+                            <span class="highlight">Financial Future</span>
+                        </h1>
+                        <p class="hero-description">
+                            WealthWise helps you track expenses, manage budgets, and achieve your financial goals 
+                            with our comprehensive personal finance management platform.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-large" id="getStartedBtn">
+                                <i class="fas fa-rocket"></i>
+                                Get Started Free
+                            </button>
+                            <button class="btn btn-outline btn-large" id="learnMoreBtn">
+                                <i class="fas fa-play-circle"></i>
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="dashboard-preview">
+                            <div class="preview-card">
+                                <div class="card-header">
+                                    <h3>Monthly Overview</h3>
+                                    <span class="status positive">+$2,500</span>
+                                </div>
+                                <div class="preview-chart">
+                                    <div class="chart-bar" style="height: 60%"></div>
+                                    <div class="chart-bar" style="height: 80%"></div>
+                                    <div class="chart-bar" style="height: 45%"></div>
+                                    <div class="chart-bar" style="height: 90%"></div>
+                                    <div class="chart-bar" style="height: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features" id="featuresSection">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Powerful Financial Management Features</h2>
+                        <p class="section-subtitle">
+                            Everything you need to manage your personal finances in one place
+                        </p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <h3 class="feature-title">Income Tracking</h3>
+                            <p class="feature-description">
+                                Track income from multiple sources with categorization and recurring income support.
+                            </p>
+                            <ul class="feature-list">
+                                <li>Multiple income sources</li>
+                                <li>Recurring income setup</li>
+                                <li>Category management</li>
+                                <li>Date-based filtering</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-minus-circle"></i>
+                            </div>
+                            <h3 class="feature-title">Expense Management</h3>
+                            <p class="feature-description">
+                                Monitor and categorize expenses with receipt uploads and detailed tracking.
+                            </p>
+                            <ul class="feature-list">
+                                <li>Receipt photo uploads</li>
+                                <li>Payment method tracking</li>
+                                <li>Location information</li>
+                                <li>Category organization</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="feature-title">Budget Planning</h3>
+                            <p class="feature-description">
+                                Create and monitor budgets with real-time progress tracking and alerts.
+                            </p>
+                            <ul class="feature-list">
+                                <li>Multi-period budgets</li>
+                                <li>Progress tracking</li>
+                                <li>Overspending alerts</li>
+                                <li>Category allocation</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="feature-title">Financial Analytics</h3>
+                            <p class="feature-description">
+                                Gain insights with comprehensive reports and visual analytics.
+                            </p>
+                            <ul class="feature-list">
+                                <li>Interactive charts</li>
+                                <li>Spending trends</li>
+                                <li>Monthly reports</li>
+                                <li>Export capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section class="section" id="dashboardSection">
+            <!-- Dashboard content will be loaded here -->
+        </section>
+
+        <!-- Income Section -->
+        <section class="section" id="incomeSection">
+            <!-- Income management content will be loaded here -->
+        </section>
+
+        <!-- Expenses Section -->
+        <section class="section" id="expensesSection">
+            <!-- Expense management content will be loaded here -->
+        </section>
+
+        <!-- Budgets Section -->
+        <section class="section" id="budgetsSection">
+            <!-- Budget management content will be loaded here -->
+        </section>
+
+        <!-- Reports Section -->
+        <section class="section" id="reportsSection">
+            <!-- Reports content will be loaded here -->
+        </section>
+    </main>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="authModalTitle">Login</h2>
+                <button class="modal-close" id="authModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-input" required>
+                        <div class="input-error" id="loginEmailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" class="form-input" required>
+                        <div class="input-error" id="loginPasswordError"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full" id="loginSubmitBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Don't have an account? 
+                            <a href="#" id="showRegisterForm">Register here</a>
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Register Form -->
+                <form class="auth-form" id="registerForm" style="display: none;">
+                    <div class="form-group">
+                        <label for="registerFullName" class="form-label">Full Name</label>
+                        <input type="text" id="registerFullName" class="form-input" required>
+                        <div class="input-error" id="registerFullNameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerEmail" class="form-label">Email Address</label>
+                        <input type="email" id="registerEmail" class="form-input" required>
+                        <div class="input-error" id="registerEmailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" id="registerPassword" class="form-input" required>
+                        <div class="input-error" id="registerPasswordError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" class="form-input" required>
+                        <div class="input-error" id="registerConfirmPasswordError"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full" id="registerSubmitBtn">
+                        <i class="fas fa-user-plus"></i>
+                        Create Account
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Already have an account? 
+                            <a href="#" id="showLoginForm">Login here</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-backdrop" id="authModalBackdrop"></div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer">
+        <!-- Notifications will be dynamically added here -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>WealthWise</span>
+                    </div>
+                    <p class="footer-description">
+                        Smart Personal Finance Tracker built with modern web technologies.
+                        Part of the Codveda Full-Stack Development Internship Program.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="#income">Income Tracking</a></li>
+                            <li><a href="#expenses">Expense Management</a></li>
+                            <li><a href="#budgets">Budget Planning</a></li>
+                            <li><a href="#reports">Financial Reports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Technology</h4>
+                        <ul>
+                            <li><a href="#">HTML5 & CSS3</a></li>
+                            <li><a href="#">Vanilla JavaScript</a></li>
+                            <li><a href="#">REST API</a></li>
+                            <li><a href="#">PostgreSQL</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Project Info</h4>
+                        <ul>
+                            <li><a href="#">Level 1 - Task 3</a></li>
+                            <li><a href="#">Codveda Internship</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">GitHub Repository</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-text">
+                    <p>&copy; 2024 WealthWise Finance Tracker. Built with ❤️ for the Codveda Internship Program.</p>
+                </div>
+                <div class="footer-tech">
+                    <span>Powered by Vanilla JavaScript & REST API</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="src/js/config.js"></script>
+    <script src="src/js/utils.js"></script>
+    <script src="src/js/api.js"></script>
+    <script src="src/js/auth.js"></script>
+    <script src="src/js/navigation.js"></script>
+    <script src="src/js/dashboard.js"></script>
+    <script src="src/js/income.js"></script>
+    <script src="src/js/expenses.js"></script>
+    <script src="src/js/budgets.js"></script>
+    <script src="src/js/reports.js"></script>
+    <script src="src/js/notifications.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
