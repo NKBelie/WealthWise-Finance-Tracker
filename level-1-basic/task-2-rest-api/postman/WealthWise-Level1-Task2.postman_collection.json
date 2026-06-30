@@ -1,0 +1,198 @@
+{
+  "info": {
+    "name": "WealthWise - Level 1 Task 2 REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "userId",
+      "value": "1"
+    },
+    {
+      "key": "incomeId",
+      "value": "1"
+    },
+    {
+      "key": "expenseId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"full_name\": \"Amina Patel\",\n  \"email\": \"amina@example.com\",\n  \"password\": \"Password123\"\n}"
+        },
+        "url": "{{baseUrl}}/api/users"
+      }
+    },
+    {
+      "name": "Get Users",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/users"
+      }
+    },
+    {
+      "name": "Get User By ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/users/{{userId}}"
+      }
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"full_name\": \"Amina Khan\"\n}"
+        },
+        "url": "{{baseUrl}}/api/users/{{userId}}"
+      }
+    },
+    {
+      "name": "Create Income",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"source\": \"Salary\",\n  \"amount\": 25000.00,\n  \"income_date\": \"2026-06-25\"\n}"
+        },
+        "url": "{{baseUrl}}/api/income"
+      }
+    },
+    {
+      "name": "Get Income",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/income"
+      }
+    },
+    {
+      "name": "Get Income By User",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/income?user_id={{userId}}"
+      }
+    },
+    {
+      "name": "Update Income",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"source\": \"Freelance Project\",\n  \"amount\": 3200.00,\n  \"income_date\": \"2026-06-26\"\n}"
+        },
+        "url": "{{baseUrl}}/api/income/{{incomeId}}"
+      }
+    },
+    {
+      "name": "Create Expense",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"category\": \"Groceries\",\n  \"amount\": 850.50,\n  \"description\": \"Weekly grocery shopping\",\n  \"expense_date\": \"2026-06-25\"\n}"
+        },
+        "url": "{{baseUrl}}/api/expenses"
+      }
+    },
+    {
+      "name": "Get Expenses",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/expenses"
+      }
+    },
+    {
+      "name": "Get Expenses By User",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/expenses?user_id={{userId}}"
+      }
+    },
+    {
+      "name": "Update Expense",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"category\": \"Transport\",\n  \"amount\": 120.00,\n  \"description\": \"Taxi fare\",\n  \"expense_date\": \"2026-06-26\"\n}"
+        },
+        "url": "{{baseUrl}}/api/expenses/{{expenseId}}"
+      }
+    },
+    {
+      "name": "Delete Expense",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/expenses/{{expenseId}}"
+      }
+    },
+    {
+      "name": "Delete Income",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/income/{{incomeId}}"
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/users/{{userId}}"
+      }
+    }
+  ]
+}
