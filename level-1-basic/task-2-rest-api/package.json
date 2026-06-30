@@ -1,0 +1,76 @@
+{
+  "name": "wealthwise-api",
+  "version": "1.0.0",
+  "description": "WealthWise Smart Personal Finance Tracker REST API - Level 1 Task 2 Enhanced Implementation",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "dev:watch": "nodemon --watch src --ext js src/server.js",
+    "test": "echo \"Tests will be implemented in Level 2\" && exit 0",
+    "lint": "echo \"ESLint will be configured in Level 2\" && exit 0",
+    "db:setup": "psql -d wealthwise_db -f database/enhanced_schema.sql",
+    "db:reset": "psql -d wealthwise_db -c \"DROP SCHEMA public CASCADE; CREATE SCHEMA public;\" && npm run db:setup",
+    "postman:test": "echo \"Import postman/collection.json to test API endpoints\"",
+    "docs": "echo \"API documentation available at /docs/API_DOCUMENTATION.md\""
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql",
+    "rest-api",
+    "finance",
+    "budget",
+    "expense-tracker",
+    "personal-finance",
+    "crud",
+    "mvc",
+    "validation",
+    "security",
+    "codveda-internship"
+  ],
+  "author": {
+    "name": "WealthWise Development Team",
+    "email": "dev@wealthwise.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/wealthwise-finance-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/wealthwise-finance-tracker/issues"
+  },
+  "homepage": "https://github.com/username/wealthwise-finance-tracker#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "joi": "^17.11.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "js,json",
+    "ignore": ["src/**/*.test.js"],
+    "exec": "node src/server.js"
+  },
+  "config": {
+    "port": 5000,
+    "db": {
+      "host": "localhost",
+      "port": 5432,
+      "name": "wealthwise_db"
+    }
+  }
+}
