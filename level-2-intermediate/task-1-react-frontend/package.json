@@ -1,0 +1,58 @@
+{
+  "name": "wealthwise-react-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WealthWise React Frontend - Level 2 Task 1: Modern React SPA with Vite",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write .",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "axios": "^1.6.2",
+    "lucide-react": "^0.294.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.1.1",
+    "vitest": "^1.0.4",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "jsdom": "^23.0.1"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "finance-tracker",
+    "personal-finance",
+    "expense-management",
+    "budget-tracker",
+    "codveda-internship",
+    "level-2"
+  ],
+  "author": "Codveda Intern",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NKBelie/WealthWise-Finance-Tracker.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
